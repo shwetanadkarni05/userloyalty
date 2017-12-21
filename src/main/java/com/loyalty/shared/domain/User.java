@@ -18,7 +18,7 @@ public class User {
     private String lastName;
     private Integer points;
 
-    private List<Transaction> transactions;
+    private List<Transfer> transfers;
 
     public User() {
     }
@@ -29,16 +29,16 @@ public class User {
         firstName = inFirstName;
         lastName = inLastName;
         points = inPoints;
-        transactions = new LinkedList<Transaction>();
+        transfers = new LinkedList<Transfer>();
     }
 
-    public User(Integer inId, String inEmail, String inFirstName, String inLastName, Integer inPoints, List<Transaction> inTransactions) {
+    public User(Integer inId, String inEmail, String inFirstName, String inLastName, Integer inPoints, List<Transfer> inTransfers) {
         id = inId;
         email = inEmail;
         firstName = inFirstName;
         lastName = inLastName;
         points = inPoints;
-        transactions = inTransactions;
+        transfers = inTransfers;
     }
 
     public Integer getId() {
@@ -81,12 +81,12 @@ public class User {
         points = inPoints;
     }
 
-    public List<Transaction> getTransactions() {
-        return transactions;
+    public List<Transfer> getTransfers() {
+        return transfers;
     }
 
-    public void setTransactions(List<Transaction> inTransactions) {
-        transactions = inTransactions;
+    public void setTransfers(List<Transfer> inTransfers) {
+        transfers = inTransfers;
     }
 
     @Override
@@ -97,7 +97,7 @@ public class User {
         sb.append(", firstName='").append(firstName).append('\'');
         sb.append(", lastName='").append(lastName).append('\'');
         sb.append(", points=").append(points);
-        sb.append(", transactions=").append(transactions);
+        sb.append(", transfers=").append(transfers);
         sb.append('}');
         return sb.toString();
     }

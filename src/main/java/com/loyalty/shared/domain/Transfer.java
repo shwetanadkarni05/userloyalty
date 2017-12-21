@@ -3,20 +3,20 @@ package com.loyalty.shared.domain;
 /**
  */
 
-public class Transaction {
+public class Transfer {
     private Integer id;
     private Integer userId;
     private Integer points;
 
-    public Transaction() {
+    public Transfer() {
     }
 
-    public Transaction(Integer inUserId, Integer inPoints) {
+    public Transfer(Integer inUserId, Integer inPoints) {
         userId = inUserId;
         points = inPoints;
     }
 
-    public Transaction(Integer inId, Integer inUserId, Integer inPoints) {
+    public Transfer(Integer inId, Integer inUserId, Integer inPoints) {
         id = inId;
         userId = inUserId;
         points = inPoints;
@@ -48,7 +48,7 @@ public class Transaction {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Transaction{");
+        final StringBuffer sb = new StringBuffer("Transfer{");
         sb.append("id=").append(id);
         sb.append(", userId=").append(userId);
         sb.append(", points=").append(points);
