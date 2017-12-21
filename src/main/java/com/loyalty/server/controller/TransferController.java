@@ -6,6 +6,7 @@ import com.loyalty.shared.domain.Transfer;
 import com.loyalty.shared.domain.UserLoyaltyError;
 
 import java.io.IOException;
+import java.util.List;
 
 
 /**
@@ -66,6 +67,27 @@ public class TransferController {
         ObjectMapper theObjectMapper = new ObjectMapper();
         try {
             return theObjectMapper.writeValueAsString(inTransfer);
+        } catch (Exception jpe) {
+            return null;
+        }
+    }
+
+    public List<Transfer> getTransfers(Integer inUserId) {
+        if (inUserId == null || inUserId == 0) {
+            return null;
+        }
+
+        return (new TransferDao()).getTransfers(inUserId);
+    }
+
+    public String convertTransferListObjectToJson(List<Transfer> inTransfers) {
+        if (inTransfers == null) {
+            return null;
+        }
+
+        ObjectMapper theObjectMapper = new ObjectMapper();
+        try {
+            return theObjectMapper.writeValueAsString(inTransfers);
         } catch (Exception jpe) {
             return null;
         }
