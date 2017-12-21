@@ -24,7 +24,7 @@ public class UserServlet {
     public Response postUser(String inUserDetails) {
 
         if (inUserDetails == null || "".equals(inUserDetails)) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(new UserLoyaltyError("No user details were received. Could not register new user.")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity((new UserLoyaltyError("No user details were received. Could not register new user.")).convertToJson()).build();
         }
         User theUser = null;
         try {
@@ -34,7 +34,7 @@ public class UserServlet {
         }
 
         if(theUser == null){
-            return Response.status(Response.Status.BAD_REQUEST).entity(new UserLoyaltyError("Please check input as something went wrong while trying to read user details. Could not register new user.")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity((new UserLoyaltyError("Please check input as something went wrong while trying to read user details. Could not register new user.")).convertToJson()).build();
         }
 
         try{
@@ -42,7 +42,7 @@ public class UserServlet {
         }catch (Exception e){
             UserLoyaltyError theUserLoyaltyError = new UserLoyaltyError(e.getMessage());
             theUserLoyaltyError.addErrorMessage("Could not register new user.");
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(theUserLoyaltyError).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(theUserLoyaltyError.convertToJson()).build();
         }
 
 
@@ -50,7 +50,7 @@ public class UserServlet {
         if(theUser_Json!=null){
             return Response.status(Response.Status.OK).entity(theUser_Json).build();
         }else {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new UserLoyaltyError("Something went wrong internally.")).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity((new UserLoyaltyError("Something went wrong internally.")).convertToJson()).build();
         }
 
     }

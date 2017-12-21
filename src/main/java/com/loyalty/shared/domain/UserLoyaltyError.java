@@ -1,5 +1,7 @@
 package com.loyalty.shared.domain;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -23,7 +25,6 @@ public class UserLoyaltyError {
         if (inErrorMessage != null && !"".equals(inErrorMessage)) {
             theErrors.add(inErrorMessage);
         }
-
     }
 
     public List<String> getTheErrors() {
@@ -34,16 +35,30 @@ public class UserLoyaltyError {
         theErrors = inTheErrors;
     }
 
-    public void addErrorMessage(String inErrorMessage){
-        if(inErrorMessage==null || "".equals(inErrorMessage) ){
+    public void addErrorMessage(String inErrorMessage) {
+        if (inErrorMessage == null || "".equals(inErrorMessage)) {
             return;
         }
 
-        if(theErrors == null){
+        if (theErrors == null) {
             theErrors = new LinkedList<String>();
         }
 
         theErrors.add(inErrorMessage);
+    }
+
+    public String convertToJson() {
+
+        if (theErrors == null) {
+            theErrors = new LinkedList<String>();
+        }
+
+        ObjectMapper theObjectMapper = new ObjectMapper();
+        try {
+            return theObjectMapper.writeValueAsString(theErrors);
+        } catch (Exception jpe) {
+            return null;
+        }
     }
 
     @Override

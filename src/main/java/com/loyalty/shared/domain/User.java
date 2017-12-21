@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
+@JsonIgnoreProperties (ignoreUnknown = true)
 public class User {
 
     private Integer id;
@@ -25,6 +25,15 @@ public class User {
 
     public User(String inEmail, String inFirstName, String inLastName, Integer inPoints) {
         id = null;
+        email = inEmail;
+        firstName = inFirstName;
+        lastName = inLastName;
+        points = inPoints;
+        transfers = new LinkedList<Transfer>();
+    }
+
+    public User(Integer inId, String inEmail, String inFirstName, String inLastName, Integer inPoints) {
+        id = inId;
         email = inEmail;
         firstName = inFirstName;
         lastName = inLastName;
