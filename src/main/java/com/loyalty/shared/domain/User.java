@@ -1,22 +1,24 @@
 package com.loyalty.shared.domain
         ;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.util.LinkedList;
 import java.util.List;
 
 
 /**
  */
-
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class User {
 
     private Integer id;
     private String email;
-    String firstName;
-    String lastName;
-    Integer points;
+    private String firstName;
+    private String lastName;
+    private Integer points;
 
-    List<Transaction> transactions;
+    private List<Transaction> transactions;
 
     public User() {
     }
