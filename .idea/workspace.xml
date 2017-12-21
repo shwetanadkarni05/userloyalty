@@ -2,15 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ab3e552-944d-44ae-bc66-56b4c63ab8df" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/shared/domain/Transaction.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/loyalty/shared/domain/Transaction.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/com/loyalty/shared/domain/Transaction.java" afterPath="$PROJECT_DIR$/src/main/java/com/loyalty/shared/domain/Transfer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war/userloyalty_war.war" afterPath="$PROJECT_DIR$/out/artifacts/userloyalty_war/userloyalty_war.war" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/shared/domain/User.class" afterPath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/shared/domain/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/loyalty/shared/domain/User.class" afterPath="$PROJECT_DIR$/target/classes/com/loyalty/shared/domain/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/loyalty/server/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/loyalty/server/dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/loyalty/shared/domain/User.java" afterPath="$PROJECT_DIR$/src/main/java/com/loyalty/shared/domain/User.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war/userloyalty_war.war" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/server/HealthCheck.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/server/controller/UserController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/server/dao/UserDao.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/server/view/UserServlet.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/shared/domain/Transfer.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/shared/domain/User.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/classes/com/loyalty/shared/domain/UserLoyaltyError.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/lib/jackson-annotations-2.8.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/lib/jackson-core-2.8.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/lib/jackson-databind-2.8.8.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/lib/jersey-bundle-1.18.3.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/lib/jsr311-api-1.1.1.jar" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/WEB-INF/web.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/artifacts/userloyalty_war_exploded/index.jsp" afterPath="" />
     </list>
     <ignored path="userloyalty.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -358,24 +365,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="controller" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userloyalty" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="userloyalty" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="out" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="artifacts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1109,12 +1098,12 @@
       <updated>1513777173144</updated>
       <workItem from="1513777178030" duration="4865000" />
       <workItem from="1513825057986" duration="5955000" />
-      <workItem from="1513831182337" duration="1979000" />
+      <workItem from="1513831182337" duration="2111000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12799000" />
+    <option name="totallyTimeSpent" value="12931000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3" y="23" width="1433" height="803" extended-state="6" />
