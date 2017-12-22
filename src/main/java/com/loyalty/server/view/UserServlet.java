@@ -41,7 +41,7 @@ public class UserServlet {
             theUser = (new UserController()).createUser(theUser);
         }catch (Exception e){
             UserLoyaltyError theUserLoyaltyError = new UserLoyaltyError(e.getMessage());
-            theUserLoyaltyError.addErrorMessage("Could not register new user.");
+            theUserLoyaltyError.addErrorMessage("could not register user.");
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(theUserLoyaltyError.convertToJson()).build();
         }
 

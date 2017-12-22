@@ -1,5 +1,6 @@
 package com.loyalty.server.dao;
 
+import com.loyalty.server.utility.Message;
 import com.loyalty.shared.domain.User;
 
 import java.sql.CallableStatement;
@@ -36,9 +37,8 @@ public class UserDao {
             boolean hasResultSet = cstmt.execute();
             status = cstmt.getString("status");
 
-            //TODO Enum
             if(!"CREATE_SUCCESS".equals(status)){
-                throw new Exception(status);
+                throw new Exception(String.format(Message.valueOf(status).getMessage(),"user"));
             }
 
             if(hasResultSet){

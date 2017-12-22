@@ -42,7 +42,7 @@ public class TransferServlet {
             theTransfer = (new TransferController()).createTransfer(theTransfer);
         } catch (Exception e) {
             UserLoyaltyError theUserLoyaltyError = new UserLoyaltyError(e.getMessage());
-            theUserLoyaltyError.addErrorMessage("Could not save transfer.");
+            theUserLoyaltyError.addErrorMessage("could not save transfer.");
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(theUserLoyaltyError.convertToJson()).build();
         }
 

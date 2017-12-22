@@ -1,5 +1,6 @@
 package com.loyalty.server.dao;
 
+import com.loyalty.server.utility.Message;
 import com.loyalty.shared.domain.Transfer;
 
 import java.sql.CallableStatement;
@@ -38,9 +39,8 @@ public class TransferDao {
             boolean hasResultSet = cstmt.execute();
             status = cstmt.getString("status");
 
-            //TODO Enum
             if (!"CREATE_SUCCESS".equals(status)) {
-                throw new Exception(status);
+                throw new Exception(String.format(Message.valueOf(status).getMessage(),"transfer"));
             }
 
             if (hasResultSet) {
@@ -88,9 +88,8 @@ public class TransferDao {
             boolean hasResultSet = cstmt.execute();
             status = cstmt.getString("status");
 
-            //TODO Enum
             if (!"FETCH_SUCCESS".equals(status)) {
-                throw new Exception(status);
+                throw new Exception(String.format(Message.valueOf(status).getMessage(),"transfer list"));
             }
 
             if (hasResultSet) {
