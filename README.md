@@ -79,3 +79,6 @@ Example Call : curl -X POST \
 ```
 Example Call : http://localhost:8080/1.0/transfer/user?id=1
 ```
+## How I tested it
+* I used the tool Postman to run a couple of tests on the api
+* It can be installed as a chrome plugin
