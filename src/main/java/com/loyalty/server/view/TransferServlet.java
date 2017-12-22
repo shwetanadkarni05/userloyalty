@@ -24,7 +24,7 @@ public class TransferServlet {
     @Consumes ("application/json" + "")
     public Response postTransaction(String inTransfer) {
         if (inTransfer == null || "".equals(inTransfer)) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(new UserLoyaltyError("No transfer details were received. Could not save transaction.")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity((new UserLoyaltyError("No transfer details were received. Could not save transaction.")).convertToJson()).build();
         }
 
         Transfer theTransfer = null;
@@ -35,7 +35,7 @@ public class TransferServlet {
         }
 
         if (theTransfer == null) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(new UserLoyaltyError("Please check input as something went wrong while trying to read transfer details. Could not create transfer.")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity((new UserLoyaltyError("Please check input as something went wrong while trying to read transfer details. Could not create transfer.")).convertToJson()).build();
         }
 
         try {
@@ -43,7 +43,7 @@ public class TransferServlet {
         } catch (Exception e) {
             UserLoyaltyError theUserLoyaltyError = new UserLoyaltyError(e.getMessage());
             theUserLoyaltyError.addErrorMessage("Could not save transfer.");
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(theUserLoyaltyError).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(theUserLoyaltyError.convertToJson()).build();
         }
 
 
@@ -51,7 +51,7 @@ public class TransferServlet {
         if (theTransferJson != null) {
             return Response.status(Response.Status.OK).entity(theTransferJson).build();
         } else {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new UserLoyaltyError("Something went wrong internally trying to save transfer.")).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity((new UserLoyaltyError("Something went wrong internally trying to save transfer.")).convertToJson()).build();
         }
     }
 
@@ -61,7 +61,7 @@ public class TransferServlet {
     public Response getITNCampaignsDetails(@QueryParam ("id") Integer inUserId) {
 
         if (inUserId == null || inUserId == 0) {
-            return Response.status(Response.Status.BAD_REQUEST).entity(new UserLoyaltyError("User id parameter is a required field. Could not fetch list of transfers.")).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity((new UserLoyaltyError("User id parameter is a required field. Could not fetch list of transfers.")).convertToJson()).build();
         }
 
         List<Transfer> theTransfers = null;
@@ -75,7 +75,7 @@ public class TransferServlet {
         if (theTransferJson != null) {
             return Response.status(Response.Status.OK).entity(theTransferJson).build();
         } else {
-            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(new UserLoyaltyError("Something went wrong internally trying to retrieve transfer.")).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity((new UserLoyaltyError("Something went wrong internally trying to retrieve transfer.")).convertToJson()).build();
         }
     }
 }

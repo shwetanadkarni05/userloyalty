@@ -9,20 +9,20 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Transfer {
     private Integer id;
     private Integer userId;
-    private Integer points;
+    private Integer amount;
 
     public Transfer() {
     }
 
-    public Transfer(Integer inUserId, Integer inPoints) {
+    public Transfer(Integer inUserId, Integer inAmount) {
         userId = inUserId;
-        points = inPoints;
+        amount = inAmount;
     }
 
-    public Transfer(Integer inId, Integer inUserId, Integer inPoints) {
+    public Transfer(Integer inId, Integer inUserId, Integer inAmount) {
         id = inId;
         userId = inUserId;
-        points = inPoints;
+        amount = inAmount;
     }
 
     public Integer getId() {
@@ -41,12 +41,12 @@ public class Transfer {
         userId = inUserId;
     }
 
-    public Integer getPoints() {
-        return points;
+    public Integer getAmount() {
+        return amount;
     }
 
-    public void setPoints(Integer inPoints) {
-        points = inPoints;
+    public void setAmount(Integer inAmount) {
+        amount = inAmount;
     }
 
     @Override
@@ -54,7 +54,7 @@ public class Transfer {
         final StringBuffer sb = new StringBuffer("Transfer{");
         sb.append("id=").append(id);
         sb.append(", userId=").append(userId);
-        sb.append(", points=").append(points);
+        sb.append(", amount=").append(amount);
         sb.append('}');
         return sb.toString();
     }
