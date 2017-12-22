@@ -75,7 +75,7 @@ Example Call : curl -X POST \
 
 #### List all Transfers for a user
 * This is a GET request. It accepts a user id parameter in the url as shown below
-* http://localhost:8080/1.0/transfer/user?id=user id:required
+* http://localhost:8080/1.0/transfer/user?id=userId:required
 ```
 Example Call : http://localhost:8080/1.0/transfer/user?id=1
 ```
