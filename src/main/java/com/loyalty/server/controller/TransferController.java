@@ -72,7 +72,7 @@ public class TransferController {
         }
     }
 
-    public List<Transfer> getTransfers(Integer inUserId) {
+    public List<Transfer> getTransfers(Integer inUserId) throws Exception{
         if (inUserId == null || inUserId == 0) {
             return null;
         }

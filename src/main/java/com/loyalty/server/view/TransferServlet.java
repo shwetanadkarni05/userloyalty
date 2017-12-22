@@ -68,7 +68,7 @@ public class TransferServlet {
         try {
             theTransfers = (new TransferController()).getTransfers(inUserId);
         } catch (Exception e) {
-            theTransfers = null;
+            return Response.status(Response.Status.BAD_REQUEST).entity((new UserLoyaltyError(e.getMessage())).convertToJson()).build();
         }
 
         String theTransferJson = (new TransferController()).convertTransferListObjectToJson(theTransfers);
