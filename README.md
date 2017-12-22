@@ -29,3 +29,53 @@ You will need
 * To create your run configuration, Select Run -> Edit Configurations… -> “+” -> Tomcat Server -> Local. Name it whatever you prefer.
 * Choose the Deployment tab, clicking “+”, and choosing Artifact… Select the userloyalty artifact listed then apply and save your changes.
 * You can launch the service by clicking the Play button.
+
+## What It Does Right Now
+### Operations supported
+#### Creating a User
+* This is a POST request. It accepts a JSON Request body with parameters as shown below
+* curl -X POST \
+    http://localhost:8080/1.0/user/register/ \
+    -H 'content-type: application/json' \
+    -d '{
+  	"email":"<email address: optional>"
+  	,"firstName":"<first name : required>"
+  	,"lastName":"<last name : required>"
+  }'
+
+```
+Example Call : curl -X POST \
+                 http://localhost:8080/1.0/user/register/ \
+                 -H 'content-type: application/json' \
+                 -d '{
+               		"email":"woof@gmail.com"
+               		,"firstName":"Bones"
+               		,"lastName":"Co"
+               	}'
+```
+
+#### Add and deduct points from a user by creating a Transfer
+* This is a POST request. It accepts a JSON Request body with parameters as shown below
+* curl -X POST \
+    http://localhost:8080/1.0/transfer/ \
+    -H 'content-type: application/json' \
+    -d '{
+  	"userId":"<user id : required>"
+  	,"amount":<an integer value : required>
+  }'
+```
+Example Call : curl -X POST \
+  				http://localhost:8080/1.0/transfer/ \
+  				-H 'content-type: application/json' \
+  				-d '{
+					"userId":"1"
+					,"amount":-30
+				}'
+```
+
+#### List all Transfers for a user
+* This is a GET request. It accepts a user id parameter in the url as shown below
+* http://localhost:8080/1.0/transfer/user?id=<user id : required>
+```
+Example Call : http://localhost:8080/1.0/transfer/user?id=1
+```
