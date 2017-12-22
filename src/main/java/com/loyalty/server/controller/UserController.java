@@ -37,7 +37,7 @@ public class UserController {
         }
         UserLoyaltyError theUserLoyaltyError = validateUser(inUser);
         if (theUserLoyaltyError != null && !theUserLoyaltyError.getTheErrors().isEmpty()) {
-            throw new Exception(theUserLoyaltyError.toString());
+            throw new Exception(theUserLoyaltyError.getTheErrors().toString());
         }
 
         User theSavedUser = (new UserDao()).insertUser(inUser);
@@ -49,10 +49,19 @@ public class UserController {
 
         UserLoyaltyError theUserLoyaltyError = null;
 
-        //TODO Add validation Code
+        if (inUser == null) {
+            theUserLoyaltyError = new UserLoyaltyError("Null user object was received. Please check the request.");
+        } else {
+            theUserLoyaltyError = new UserLoyaltyError();
+            if (inUser.getFirstName() == null || "".equals(inUser.getFirstName())) {
+                theUserLoyaltyError.addErrorMessage("First name cannot be empty");
+            }
+            if (inUser.getLastName() == null || "".equals(inUser.getLastName())) {
+                theUserLoyaltyError.addErrorMessage("Last name cannot be empty");
+            }
+        }
 
         //TODO Add Additional Validation code like email pattern
-
 
         return theUserLoyaltyError;
     }

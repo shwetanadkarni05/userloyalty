@@ -14,6 +14,7 @@ public class UserLoyaltyError {
     private List<String> theErrors;
 
     public UserLoyaltyError() {
+        theErrors = new LinkedList<String>();
     }
 
     public UserLoyaltyError(List<String> inTheErrors) {
