@@ -38,9 +38,9 @@ You will need
     http://localhost:8080/1.0/user/register/ \
     -H 'content-type: application/json' \
     -d '{
-  	"email":"<email address: optional>"
-  	,"firstName":"<first name : required>"
-  	,"lastName":"<last name : required>"
+  	"email":"email address: optional"
+  	,"firstName":"first name : required"
+  	,"lastName":"last name : required"
   }'
 
 ```
@@ -60,8 +60,8 @@ Example Call : curl -X POST \
     http://localhost:8080/1.0/transfer/ \
     -H 'content-type: application/json' \
     -d '{
-  	"userId":"<user id : required>"
-  	,"amount":<an integer value : required>
+  	"userId":"user id : required"
+  	,"amount":an integer value : required
   }'
 ```
 Example Call : curl -X POST \
@@ -75,7 +75,7 @@ Example Call : curl -X POST \
 
 #### List all Transfers for a user
 * This is a GET request. It accepts a user id parameter in the url as shown below
-* http://localhost:8080/1.0/transfer/user?id=<user id : required>
+* http://localhost:8080/1.0/transfer/user?id=user id:required
 ```
 Example Call : http://localhost:8080/1.0/transfer/user?id=1
 ```
